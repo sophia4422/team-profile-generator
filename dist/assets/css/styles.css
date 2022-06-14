@@ -14,27 +14,46 @@
   flex-wrap: wrap;
 }
 
-.card {
-  border-style: solid;
-  border-color: #46474b;
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  border-top: solid;
+}
+
+.intern-card {
   margin-bottom: 5px;
   margin-right: 10px;
-  background-color: #ffffff;
+  background-color: #f5f2f2;
   color: #46474b;
   padding: 10px;
   width: 300px;
 }
 
-.card h2 {
+.intern-title {
   color: #393a3d;
+  font-weight: 500;
+}
+
+.engineer-card {
+  margin-bottom: 5px;
+  margin-right: 10px;
+  background-color: #b3b4b5;
+  color: #46474b;
+  padding: 10px;
+  width: 300px;
 }
 
 .manager-card {
   background-color: #46474b;
-  border-style: solid;
-  border-color: #46474b;
   color: #ffffff;
   margin-bottom: 5px;
   padding: 10px;
   width: 300px;
+}
+
+.manager-card h2 {
+  font-weight: 500;
 }
