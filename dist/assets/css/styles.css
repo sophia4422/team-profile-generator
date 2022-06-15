@@ -5,7 +5,7 @@
 .header {
   color: #393a3d;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .card-container {
@@ -25,11 +25,13 @@ ul li {
 
 .intern-card {
   margin-bottom: 5px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
   background-color: #f5f2f2;
   color: #46474b;
   padding: 10px;
   width: 300px;
+  box-shadow: 5px 5px 5px #46474b;
 }
 
 .intern-title {
@@ -39,19 +41,24 @@ ul li {
 
 .engineer-card {
   margin-bottom: 5px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
   background-color: #b3b4b5;
   color: #46474b;
   padding: 10px;
   width: 300px;
+  box-shadow: 5px 5px 5px #46474b;
 }
 
 .manager-card {
   background-color: #46474b;
   color: #ffffff;
   margin-bottom: 5px;
+  margin-top: 10px;
   padding: 10px;
+  margin-right: 20px;
   width: 300px;
+  box-shadow: 5px 5px 5px #727376;
 }
 
 .manager-card h2 {
