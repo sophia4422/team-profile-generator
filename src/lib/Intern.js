@@ -8,9 +8,13 @@ class Intern extends Employee {
     this.role = "Intern";
   }
 
-  getSchool() {}
+  getSchool() {
+    return this.role;
+  }
 
-  getRole() {}
+  getRole() {
+    return this.school;
+  }
 }
 
 module.exports = Intern;
