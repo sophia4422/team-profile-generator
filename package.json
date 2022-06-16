@@ -4,7 +4,8 @@
   "description": "Using node.Js to generate a team profile",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/sophia4422/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/sophia4422/team-profile-generator#readme"
+  "homepage": "https://github.com/sophia4422/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
 }
