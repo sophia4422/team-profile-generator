@@ -64,3 +64,21 @@ ul li {
 .manager-card h2 {
   font-weight: 500;
 }
+
+h4 a {
+  color: white;
+}
+
+.intern-card h4 a {
+  color: #46474b;
+}
+
+@media screen and (max-width: 596px) {
+  body {
+    background-color: rgb(203, 212, 215);
+  }
+  .card-container {
+    align-items: center;
+    margin: auto;
+  }
+}
