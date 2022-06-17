@@ -9,11 +9,11 @@ class Intern extends Employee {
   }
 
   getSchool() {
-    return this.role;
+    return this.school;
   }
 
   getRole() {
-    return this.school;
+    return this.role;
   }
 }
 
