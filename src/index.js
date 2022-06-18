@@ -16,22 +16,22 @@ const teamNameQuestion = [
 const managerQuestions = [
   {
     type: "input",
-    name: "managerName",
+    name: "name",
     message: "Please enter the Manager's name:",
   },
   {
     type: "input",
-    name: "managerId",
+    name: "id",
     message: "Please enter the Manager's ID number:",
   },
   {
     type: "input",
-    name: "managerEmail",
+    name: "email",
     message: "Please enter the Manager's Email address:",
   },
   {
     type: "input",
-    name: "managerNumber",
+    name: "officeNumber",
     message: "Please enter the Manager's Office Number:",
   },
 ];
@@ -52,22 +52,22 @@ const optionalQuestions = [
 const engineerQuestions = [
   {
     type: "input",
-    name: "engineerName",
+    name: "name",
     message: "Please enter Engineer's name:",
   },
   {
     type: "input",
-    name: "engineerId",
+    name: "id",
     message: "Please enter Engineer's ID number:",
   },
   {
     type: "input",
-    name: "engineerEmail",
+    name: "email",
     message: "Please enter the Engineer's Email address:",
   },
   {
     type: "input",
-    name: "github",
+    name: "githubUsername",
     message: "Please enter the Engineer's Github username:",
   },
 ];
@@ -75,17 +75,17 @@ const engineerQuestions = [
 const internQuestions = [
   {
     type: "input",
-    name: "internName",
+    name: "name",
     message: "Please enter Intern's name:",
   },
   {
     type: "input",
-    name: "internId",
+    name: "id",
     message: "Please enter Intern's ID number:",
   },
   {
     type: "input",
-    name: "internEmail",
+    name: "email",
     message: "Please enter the Intern's Email address:",
   },
   {
@@ -126,6 +126,10 @@ const init = async () => {
   const managerAnswers = await getAnswers(managerQuestions);
   const manager = new Manager(managerAnswers);
   const teamMembers = await allEmployees();
+
+  console.log(teamNameAnswer, manager, teamMembers);
+
+  const htmlCard = 
 };
 
 init();

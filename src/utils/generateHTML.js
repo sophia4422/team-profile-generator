@@ -1,8 +1,13 @@
+const Manager = require("../lib/Manager");
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+const Employee = require("../lib/Employee");
+
 //make manager card
 const generateManagerCard = (manager) => {
   return `<div class="manager-card">
     <h2>${manager.name}</h2>
-    <h3>Manager <i class="fa-solid fa-paperclip"></i></h3>
+    <h3>${manager.getRole()} <i class="fa-solid fa-paperclip"></i></h3>
     <ul>
         <li><h4>ID: ${manager.id}</h4></li>
         <li>
