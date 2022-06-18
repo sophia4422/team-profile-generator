@@ -1,9 +1,8 @@
-const fs = require("fs");
-
+const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Manager = require("./lib/Manager");
 const getAnswers = require("./utils/getAnswers");
+const writeToFile = require("./utils/writeToFile");
 const generateHTML = require("./utils/generateHTML");
 
 const teamNameQuestion = [
