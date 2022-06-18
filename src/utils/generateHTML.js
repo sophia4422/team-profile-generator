@@ -1,14 +1,14 @@
 //make manager card
-const generateManagerCard = () => {
+const generateManagerCard = (manager) => {
   return `<div class="manager-card">
-    <h2>Sally</h2>
+    <h2>${manager.name}</h2>
     <h3>Manager <i class="fa-solid fa-paperclip"></i></h3>
     <ul>
-        <li><h4>ID: 1</h4></li>
+        <li><h4>ID: ${manager.id}</h4></li>
         <li>
-        <h4>Email: <a href="mailto:fredfred@burger.com">Click here</a></h4>
+        <h4>Email: <a href="mailto:${manager.email}">Click here</a></h4>
         </li>
-        <li><h4>Office Number: 123456</h4></li>
+        <li><h4>Office Number: ${manager.officeNumber}</h4></li>
     </ul>
     </div>`;
 };
@@ -58,12 +58,34 @@ const generateInternCard = () => {
 };
 
 generateHTML = () => {
+  cardArray = [];
+
   if (role === "Manager") {
+    const managerCard = generateManagerCard(employee);
+
+    cardArray.push(managerCard);
   }
+
+  if (role === "Engineer") {
+    const engineerCard = generateEngineerCard(employee);
+
+    cardArray.push(engineerCard);
+  }
+
+  if (role === "Intern") {
+    const internCard = generateInternCard(employee);
+
+    cardArray.push(internCard);
+  }
+
+  const employeeCards = cardArray.join("");
+
+  const generateTeamPage = teamPage(employeeCards);
+  return generateTeamPage;
 };
 
 //html page
-const teamPage = () => {
+const teamPage = (employeeCards) => {
   return `<!DOCTYPE html>
     <html>
         <head>
@@ -99,6 +121,7 @@ const teamPage = () => {
         </header>
     
         <div class="card-container">   
+        ${employeeCards}
         </div>
         <script src="" async defer></script>
         </body>

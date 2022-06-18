@@ -10,44 +10,26 @@ const teamName = [
   },
 ];
 
-const questions = [
+const managerQuestions = [
   {
     type: "input",
-    message: "What is the employee's name?",
-    name: "name",
+    name: "managerName",
+    message: "Please enter the Manager's name:",
   },
   {
     type: "input",
-    message: "What is the employee's ID?",
-    name: "id",
+    name: "managerId",
+    message: "Please enter the Manager's ID number:",
   },
   {
     type: "input",
-    message: "What is the employee's email address?",
-    name: "email",
-  },
-];
-
-const internQuestions = [
-  {
-    type: "input",
-    name: "internName",
-    message: "Please enter Intern's name:",
+    name: "managerEmail",
+    message: "Please enter the Manager's Email address:",
   },
   {
     type: "input",
-    name: "internId",
-    message: "Please enter Intern's ID number:",
-  },
-  {
-    type: "input",
-    name: "internEmail",
-    message: "Please enter the Intern's Email address:",
-  },
-  {
-    type: "input",
-    name: "internSchool",
-    message: "Please enter the Intern's school:",
+    name: "managerNumber",
+    message: "Please enter the Manager's Office Number:",
   },
 ];
 
@@ -74,32 +56,33 @@ const engineerQuestions = [
   },
 ];
 
-const managerQuestions = [
+const internQuestions = [
   {
     type: "input",
-    name: "managerName",
-    message: "Please enter the Manager's name:",
+    name: "internName",
+    message: "Please enter Intern's name:",
   },
   {
     type: "input",
-    name: "managerId",
-    message: "Please enter the Manager's ID number:",
+    name: "internId",
+    message: "Please enter Intern's ID number:",
   },
   {
     type: "input",
-    name: "managerEmail",
-    message: "Please enter the Manager's Email address:",
+    name: "internEmail",
+    message: "Please enter the Intern's Email address:",
   },
   {
     type: "input",
-    name: "managerNumber",
-    message: "Please enter the Manager's Office Number:",
+    name: "internSchool",
+    message: "Please enter the Intern's school:",
   },
 ];
 
+const allEmployees = () => {};
+
 const init = async () => {
   const teamNameAnswer = await inquirer.prompt(teamName);
-  const answers = await inquirer.prompt(questions);
   const internAnswers = await inquirer.prompt(internQuestions);
   const engineerAnswers = await inquirer.prompt(engineerQuestions);
   const managerAnswers = await inquirer.prompt(managerQuestions);
@@ -108,9 +91,8 @@ const init = async () => {
 init();
 
 module.exports = {
-  teamName,
-  questions,
-  internQuestions,
-  engineerQuestions,
-  managerQuestions,
+  teamNameAnswer,
+  internAnswers,
+  engineerAnswers,
+  managerAnswers,
 };
