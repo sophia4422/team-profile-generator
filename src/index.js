@@ -1,8 +1,11 @@
-const inquirer = require("inquirer");
-
 const fs = require("fs");
 
-const teamName = [
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const getAnswers = require("./utils/getAnswers");
+
+const teamNameQuestion = [
   {
     name: "teamName",
     type: "input",
@@ -30,6 +33,19 @@ const managerQuestions = [
     type: "input",
     name: "managerNumber",
     message: "Please enter the Manager's Office Number:",
+  },
+];
+
+const optionalQuestions = [
+  {
+    name: "employeeType",
+    type: "list",
+    message: "Would you like to add a team member or quit?",
+    choices: [
+      { key: "Engineer", value: "engineer" },
+      // { key: "Intern", value "intern" },
+      { key: "Quit", value: "quit" },
+    ],
   },
 ];
 
@@ -79,20 +95,35 @@ const internQuestions = [
   },
 ];
 
-const allEmployees = () => {};
+const allEmployees = async () => {
+  const answersArray = [];
+
+  let looping = true;
+  while (looping) {
+    const { employeeRole } = await getAnswers(optionalQuestions);
+    if (employeeRole === "engineer") {
+      const engineerAnswers = await getAnswers(engineerQuestions);
+
+      const engineer = new Engineer(engineerAnswers);
+      answersArray.push(engineer);
+    } else if (employeeRole === "intern") {
+      const internAnswers = await getAnswers(internQuestions);
+
+      const intern = new Intern(internAnswers);
+      answersArray.push(intern);
+    } else {
+      looping = false;
+    }
+  }
+  return answersArray;
+};
 
 const init = async () => {
-  const teamNameAnswer = await inquirer.prompt(teamName);
-  const internAnswers = await inquirer.prompt(internQuestions);
-  const engineerAnswers = await inquirer.prompt(engineerQuestions);
-  const managerAnswers = await inquirer.prompt(managerQuestions);
+  const teamNameAnswer = await getAnswers(teamNameQuestion);
+  const managerAnswers = await getAnswers(managerQuestions);
+  const manager = new Manager(managerAnswers);
+
+  const teamMembers = await allEmployees();
 };
 
 init();
-
-module.exports = {
-  teamNameAnswer,
-  internAnswers,
-  engineerAnswers,
-  managerAnswers,
-};
