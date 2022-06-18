@@ -128,7 +128,7 @@ const generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {
         </header>
     
         <div class="card-container">   
-        ${employeeCards}
+       
         </div>
         <script src="" async defer></script>
         </body>
