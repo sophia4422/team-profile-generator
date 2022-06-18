@@ -43,7 +43,7 @@ const optionalQuestions = [
     message: "Would you like to add a team member or quit?",
     choices: [
       { key: "Engineer", value: "engineer" },
-      // { key: "Intern", value "intern" },
+      { key: "Intern", value: "intern" },
       { key: "Quit", value: "quit" },
     ],
   },
@@ -100,13 +100,16 @@ const allEmployees = async () => {
 
   let looping = true;
   while (looping) {
-    const { employeeRole } = await getAnswers(optionalQuestions);
-    if (employeeRole === "engineer") {
+    const { employeeType } = await getAnswers(optionalQuestions);
+    console.log("hello");
+    //code is broken here
+    if (employeeType === "engineer") {
       const engineerAnswers = await getAnswers(engineerQuestions);
 
       const engineer = new Engineer(engineerAnswers);
+      console.log(engineer);
       answersArray.push(engineer);
-    } else if (employeeRole === "intern") {
+    } else if (employeeType === "intern") {
       const internAnswers = await getAnswers(internQuestions);
 
       const intern = new Intern(internAnswers);
@@ -122,7 +125,6 @@ const init = async () => {
   const teamNameAnswer = await getAnswers(teamNameQuestion);
   const managerAnswers = await getAnswers(managerQuestions);
   const manager = new Manager(managerAnswers);
-
   const teamMembers = await allEmployees();
 };
 
