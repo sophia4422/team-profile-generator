@@ -62,35 +62,37 @@ const generateInternCard = () => {
   </div>`;
 };
 
-generateHTML = () => {
-  cardArray = [];
+// generateHTML = () => {
+//   cardArray = [];
 
-  if (role === "Manager") {
-    const managerCard = generateManagerCard(employee);
+//   if (role === "Manager") {
+//     const managerCard = generateManagerCard(employee);
 
-    cardArray.push(managerCard);
-  }
+//     cardArray.push(managerCard);
+//   }
 
-  if (role === "Engineer") {
-    const engineerCard = generateEngineerCard(employee);
+//   if (role === "Engineer") {
+//     const engineerCard = generateEngineerCard(employee);
 
-    cardArray.push(engineerCard);
-  }
+//     cardArray.push(engineerCard);
+//   }
 
-  if (role === "Intern") {
-    const internCard = generateInternCard(employee);
+//   if (role === "Intern") {
+//     const internCard = generateInternCard(employee);
 
-    cardArray.push(internCard);
-  }
+//     cardArray.push(internCard);
+//   }
 
-  const employeeCards = cardArray.join("");
+//   const employeeCards = cardArray.join("");
 
-  const generateTeamPage = teamPage(employeeCards);
-  return generateTeamPage;
-};
+//   const generateTeamPage = teamPage(employeeCards);
+//   return generateTeamPage;
+// };
+
+// generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {};
 
 //html page
-const teamPage = (employeeCards) => {
+const generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {
   return `<!DOCTYPE html>
     <html>
         <head>

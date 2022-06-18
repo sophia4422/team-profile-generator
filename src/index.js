@@ -4,6 +4,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const getAnswers = require("./utils/getAnswers");
+const renderHTML = require("./utils/generateHTML");
 
 const teamNameQuestion = [
   {
@@ -129,7 +130,9 @@ const init = async () => {
 
   console.log(teamNameAnswer, manager, teamMembers);
 
-  const htmlCard = 
+  const htmlCard = generateHTML({ teamNameAnswer, manager, teamMembers });
+
+  writeToFile(htmlCard);
 };
 
 init();
