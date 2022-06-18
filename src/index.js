@@ -108,5 +108,9 @@ const init = async () => {
 init();
 
 module.exports = {
+  teamName,
   questions,
+  internQuestions,
+  engineerQuestions,
+  managerQuestions,
 };
