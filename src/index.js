@@ -8,10 +8,10 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 //html templates go here
-const addManagerCard = require("./src/cards/card-manager");
-const addEngineerCard = require("./src/cards/card-engineer");
-const addInternCard = require("./src/cards/card-intern");
-const wrapProfileCards = require("./src/cards/card-wrapper");
+// const addManagerCard = require("./src/cards/card-manager");
+// const addEngineerCard = require("./src/cards/card-engineer");
+// const addInternCard = require("./src/cards/card-intern");
+// const wrapProfileCards = require("./src/cards/card-wrapper");
 
 //team members array
 const team = [];
@@ -111,16 +111,27 @@ const internQuestions = [
   },
 ];
 
-const askQuestions = async () => {
-  consts getAnswers = await inquirer.prompt(teamNameQuestion);
+const askQuestions = async (questionArr) => {
+  inquirer
+    .prompt(questionArr)
+    .then((member) => {
+      team.push(member);
 
-  if (member.upNext === 'Add Engineer') {
-askQuestions(managerQuestions)
-  } else if () {
+      if (member.upNext === "Add Engineer") {
+        askQuestions(engineerQuestions);
+      } else if (member.upNext === "Add Intern") {
+        askQuestions(internQuestions);
+      } else {
+        createProfiles(team);
+      }
+    })
+    .catch((err) => console.log(err));
+};
 
-  } else {
-
+const createProfiles = (team) => {
+  const profiles = team.map(member) => {
+    const { name, id, email } = member;
   }
-}
+};
 
-init();
+askQuestions(managerQuestions);
