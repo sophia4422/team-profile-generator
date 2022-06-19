@@ -171,7 +171,7 @@ const generateHtml = (profiles) => {
 };
 
 writeHtml = (newHtml) => {
-  fs.writeFile("./dist/profile.html", newHtml, (err) => {
+  fs.writeFileSync("./dist/profile.html", JSON.stringify(newHtml), (err) => {
     if (err) throw err;
     console.log("Your team profile has been generated!");
   });
