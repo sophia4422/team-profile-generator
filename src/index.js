@@ -111,17 +111,16 @@ const internQuestions = [
   },
 ];
 
-const init = async () => {
-  const teamNameAnswer = await getAnswers(teamNameQuestion);
-  const managerAnswers = await getAnswers(managerQuestions);
-  const manager = new Manager(managerAnswers);
-  const teamMembers = await allEmployees();
+const askQuestions = async () => {
+  consts getAnswers = await inquirer.prompt(teamNameQuestion);
 
-  console.log(teamNameAnswer, manager, teamMembers);
+  if (member.upNext === 'Add Engineer') {
+askQuestions(managerQuestions)
+  } else if () {
 
-  const htmlCard = generateHTML({ teamNameAnswer, manager, teamMembers });
+  } else {
 
-  writeToFile(htmlCard);
-};
+  }
+}
 
 init();
