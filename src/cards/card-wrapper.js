@@ -1,4 +1,4 @@
-const cardWrapper = () => {
+const cardWrapper = (cards) => {
   `<!DOCTYPE html>
   <html>
     <head>

@@ -151,4 +151,30 @@ const createProfiles = (team) => {
   generateHtml(profiles);
 };
 
+const generateHtml = (profiles) => {
+  let profileCards = "";
+  profiles.forEach((profile) => {
+    if (profile instanceof Manager) {
+      const card = addManagerCard(profile);
+      profileCards += card;
+    } else if (profile instanceof Engineer) {
+      const card = addEngineerCard(profile);
+      profileCards += card;
+    } else if (profile instanceof Intern) {
+      const card = addInternCard(profile);
+      profileCards += card;
+    }
+  });
+  const newHtml = wrapProfileCards(profileCards);
+
+  writeHtml(newHtml);
+};
+
+writeHtml = (newHtml) => {
+  fs.writeFile("./dist/profile.html", newHtml, (err) => {
+    if (err) throw err;
+    console.log("Your team profile has been generated!");
+  });
+};
+
 askQuestions(managerQuestions);
