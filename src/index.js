@@ -8,10 +8,10 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 //html templates go here
-// const addManagerCard = require("./src/cards/card-manager");
-// const addEngineerCard = require("./src/cards/card-engineer");
-// const addInternCard = require("./src/cards/card-intern");
-// const wrapProfileCards = require("./src/cards/card-wrapper");
+const addManagerCard = require("./cards/card-manager");
+const addEngineerCard = require("./cards/card-engineer");
+const addInternCard = require("./cards/card-intern");
+const wrapProfileCards = require("./cards/card-wrapper");
 
 //team members array
 const team = [];
@@ -129,9 +129,26 @@ const askQuestions = async (questionArr) => {
 };
 
 const createProfiles = (team) => {
-  const profiles = team.map(member) => {
+  const profiles = team.map((member) => {
     const { name, id, email } = member;
-  }
+
+    // If you're adding a manager, ask for office number
+    if (member.hasOwnProperty("officeNumber")) {
+      const { officeNumber } = member;
+      return new Manager(name, id, email, officeNumber);
+    }
+
+    if (member.hasOwnProperty("github")) {
+      const { github } = member;
+      return new Engineer(name, id, email, github);
+    }
+
+    if (member.hasOwnProperty("school")) {
+      const { school } = member;
+      return new Intern(name, id, email, school);
+    }
+  });
+  generateHtml(profiles);
 };
 
 askQuestions(managerQuestions);
