@@ -1,9 +1,16 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+
+//classes
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const getAnswers = require("./utils/getAnswers");
-const writeToFile = require("./utils/writeToFile");
-const generateHTML = require("./utils/generateHTML");
+
+//html templates go here
+
+//team members array
+const team = [];
 
 const teamNameQuestion = [
   {
@@ -33,19 +40,6 @@ const managerQuestions = [
     type: "input",
     name: "officeNumber",
     message: "Please enter the Manager's Office Number:",
-  },
-];
-
-const optionalQuestions = [
-  {
-    name: "employeeType",
-    type: "list",
-    message: "Would you like to add a team member or quit?",
-    choices: [
-      { key: "Engineer", value: "engineer" },
-      { key: "Intern", value: "intern" },
-      { key: "Quit", value: "quit" },
-    ],
   },
 ];
 
@@ -94,32 +88,6 @@ const internQuestions = [
     message: "Please enter the Intern's school:",
   },
 ];
-
-const allEmployees = async () => {
-  const answersArray = [];
-
-  let looping = true;
-  while (looping) {
-    const { employeeType } = await getAnswers(optionalQuestions);
-    console.log("hello");
-    //code is broken here
-    if (employeeType === "engineer") {
-      const engineerAnswers = await getAnswers(engineerQuestions);
-
-      const engineer = new Engineer(engineerAnswers);
-      console.log(engineer);
-      answersArray.push(engineer);
-    } else if (employeeType === "intern") {
-      const internAnswers = await getAnswers(internQuestions);
-
-      const intern = new Intern(internAnswers);
-      answersArray.push(intern);
-    } else {
-      looping = false;
-    }
-  }
-  return answersArray;
-};
 
 const init = async () => {
   const teamNameAnswer = await getAnswers(teamNameQuestion);

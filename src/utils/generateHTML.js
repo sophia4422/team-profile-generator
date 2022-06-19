@@ -19,27 +19,26 @@ const generateManagerCard = (manager) => {
 };
 
 //make engineer card
-const generateEngineerCard = () => {
+const generateEngineerCard = (engineer) => {
   return `  <div class="engineer-card">
-    <h2>Fred</h2>
+    <h2>${engineer.name}</h2>
     <h3>
-    Engineer <i class="fa-solid fa-wrench"></i>
+    ${engineer.getRole()} <i class="fa-solid fa-wrench"></i>
     </h3>
 
     <ul>
     <li>
-        <h4>ID: 2</h4>
+        <h4>ID: ${engineer.id}</h4>
     </li>
     <li>
         <h4>
-        Email: <a href="mailto:fredfred@burger.com">Click here</a>
+        Email: <a href="mailto:${engineer.email}">Click here</a>
         </h4>
     </li>
     <li>
         <h4>
         Github:
-        <a href="https://github.com/sophia4422" target="_blank">
-            sophia4422
+        <a href="https://github.com/${engineer.githubUsername}" target="_blank">
         </a>
         </h4>
     </li>
@@ -48,16 +47,16 @@ const generateEngineerCard = () => {
 };
 
 //make intern card
-const generateInternCard = () => {
+const generateInternCard = (intern) => {
   return `<div class="intern-card">
-    <h2 class="intern-title">Bob</h2>
-    <h3>Intern <i class="fa-solid fa-graduation-cap"></i></h3>
+    <h2 class="intern-title">${intern.name}</h2>
+    <h3>${intern.getRole()} <i class="fa-solid fa-graduation-cap"></i></h3>
     <ul>
-      <li><h4>ID: 2</h4></li>
+      <li><h4>ID: ${intern.id}</h4></li>
       <li>
-        <h4>Email: <a href="mailto:fredfred@burger.com">Click here</a></h4>
+        <h4>Email: <a href="mailto:${intern.email}">Click here</a></h4>
       </li>
-      <li><h4>School: Trinity High</h4></li>
+      <li><h4>School: ${intern.school}</h4></li>
     </ul>
   </div>`;
 };
@@ -101,7 +100,6 @@ const generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {
         <title></title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="./dist/assets/css/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,14 +119,16 @@ const generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="stylesheet" href="./dist/assets/css/styles.css" />
         </head>
         <body>
         <header class="header">
-            <h1>Welcome to THE TEAM Profile</h1>
+            <h1>Welcome to ${teamNameAnswer} Profile</h1>
         </header>
     
         <div class="card-container">   
-       
+        ${generateManagerCard(manager)}
+      
         </div>
         <script src="" async defer></script>
         </body>
