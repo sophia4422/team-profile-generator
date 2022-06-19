@@ -1,5 +1,4 @@
-const cardWrapper = (cards) => {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <meta charset="utf-8" />
@@ -36,11 +35,17 @@ const cardWrapper = (cards) => {
       <div class="card-container">
 
         <!-- Profile Cards COntainer -->
-        ${cards}
+        <div class="manager-card">
+  <h2>manager</h2>
+  <h3>Manager <i class="fa-solid fa-paperclip"></i></h3>
+  <ul>
+    <li><h4>ID: 344</h4></li>
+    <li>
+      <h4>Email: <a href="mailto:email">Click here</a></h4>
+    </li>
+    <li><h4>Office Number: 234</h4></li>
+  </ul>
       </div>
       <script src="" async defer></script>
     </body>
-  </html>`;
-};
-
-module.exports = cardWrapper;
+  </html>
