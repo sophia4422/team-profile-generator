@@ -30,7 +30,7 @@ const cardWrapper = (cards) => {
     </head>
     <body>
       <header class="header">
-        <h1>Welcome to THE TEAM Profile</h1>
+        <h1>Welcome to The Team Profile</h1>
       </header>
   
       <div class="card-container">

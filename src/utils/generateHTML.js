@@ -128,7 +128,6 @@ const generateHTML = ({ teamNameAnswer, manager, teamMembers }) => {
     
         <div class="card-container">   
         ${generateManagerCard(manager)}
-      
         </div>
         <script src="" async defer></script>
         </body>

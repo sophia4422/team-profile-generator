@@ -10,7 +10,8 @@ const managerCard = (manager) => {
       <h4>Email: <a href="mailto:${manager.email}">Click here</a></h4>
     </li>
     <li><h4>Office Number: ${manager.officeNumber}</h4></li>
-  </ul>`;
+  </ul>
+  </div>`;
 };
 
 module.exports = managerCard;

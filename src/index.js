@@ -71,7 +71,7 @@ const engineerQuestions = [
   },
   {
     type: "input",
-    name: "githubUsername",
+    name: "github",
     message: "Please enter the Engineer's Github username:",
   },
   {
@@ -100,7 +100,7 @@ const internQuestions = [
   },
   {
     type: "input",
-    name: "internSchool",
+    name: "school",
     message: "Please enter the Intern's school:",
   },
   {
@@ -165,14 +165,16 @@ const generateHtml = (profiles) => {
       profileCards += card;
     }
   });
+
   const newHtml = wrapProfileCards(profileCards);
 
   writeHtml(newHtml);
 };
 
-writeHtml = (newHtml) => {
-  fs.writeFileSync("./dist/profile.html", newHtml, (err) => {
-    if (err) throw err;
+const writeHtml = (newHtml) => {
+  fs.writeFile("./dist/profile.html", newHtml, (err) => {
+    if (err)
+      console.error("Oops! Not able to render file! Please try again later.");
     console.log("Your team profile has been generated!");
   });
 };
