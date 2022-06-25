@@ -14,7 +14,7 @@ const engineerCard = (engineer) => {
     <h4>
       Github:
       <a href="https://github.com/${engineer.github}" target="_blank"
-        >sophia4422</a
+        >${engineer.github}</a
       >
     </h4>
   </li>
