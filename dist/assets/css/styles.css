@@ -1,0 +1,84 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  color: #393a3d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  border-top: solid;
+}
+
+.intern-card {
+  margin-bottom: 5px;
+  margin-right: 20px;
+  margin-top: 10px;
+  background-color: #f5f2f2;
+  color: #46474b;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 5px 5px 5px #46474b;
+}
+
+.intern-title {
+  color: #393a3d;
+  font-weight: 500;
+}
+
+.engineer-card {
+  margin-bottom: 5px;
+  margin-right: 20px;
+  margin-top: 10px;
+  background-color: #b3b4b5;
+  color: #46474b;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 5px 5px 5px #46474b;
+}
+
+.manager-card {
+  background-color: #46474b;
+  color: #ffffff;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  margin-right: 20px;
+  width: 300px;
+  box-shadow: 5px 5px 5px #727376;
+}
+
+.manager-card h2 {
+  font-weight: 500;
+}
+
+h4 a {
+  color: white;
+}
+
+.intern-card h4 a {
+  color: #46474b;
+}
+
+@media screen and (max-width: 596px) {
+  body {
+    background-color: rgb(203, 212, 215);
+  }
+  .card-container {
+    align-items: center;
+    margin: auto;
+  }
+}
